@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id='div'></div>
+
+<table>
+
+        You are renting NO.{{ rentingID }} vehicle
+
+</table>
+
+<form class = "rent" id = "rent" action="/returnvehicle" method="POST" >
+    <input type="hidden" id="returnLat" name="returnLat" >
+    <input type="hidden" id="returnLong" name="returnLong">
+    <input type="submit" value="Return your vehicle" onclick="returnvehicle()"/>
+</form>
+
+
+
+<script>
+
+
+
+
+
+
+
+
+
+    function getUserposition(){
+        {% if rentingID %}
+            var rentingID = {{ rentingID }}
+        {% endif %}
+
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            var userLat = position.coords.latitude
+            var userLong = position.coords.longitude
+            document.getElementById('returnLat').value = userLat;
+            document.getElementById('returnLong').value = userLong;
+        },
+        function (error) {
+            //If an error occurs when trying to access the users position information, display an error message.
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Position information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user position timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
+    );
+       document.onreadystatechange = completeLoading;
+
+
+
+    }
+
+
+
+    function returnvehicle() {
+        alert("Thank you for using our system!");
+    }
+
+
+    window.onload=getUserposition();
+
+</script>
+</body>
+<style>
+    #rent-button {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        width: 60px;
+        text-align: center;
+        border: 1px solid #232323;
+    }
+
+
+</style>
+</html>

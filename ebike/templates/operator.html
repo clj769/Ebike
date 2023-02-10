@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcom Operator</title>
+
+
+    <style>
+
+        .operatorMain{
+            width: 1000px;
+            margin: 0 auto;
+
+        }
+
+        .operatorMain  h4 {
+            font-size: 30px;
+        }
+        .operatorTable{
+
+        }
+
+        .operatorBox{}
+        .operatorBox .operatorForm{
+            margin: 30px
+        }
+        input[type=submit]{
+            height: 36px;
+            border: 0;
+            background: #2196f3;
+            color: #fff;
+            padding: 0 20px;
+        }
+        input[type=text],input[type=text][disabled]{
+            width: 100px;
+            height: 30px;
+            border: 1px solid #a19c9c;
+            padding-left: 4px;
+        }
+
+
+        input[type=text]:focus {
+            border: 1px solid black;
+            outline: none;
+        }
+        .operatorBox .addvehicleForm{
+            margin: 30px
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="operatorMain">
+
+
+    <h4>Welcome Operator</h4>
+    <tr>
+        <td>
+            To get a better experience, please try to locate vehicles within this region:
+            </br>
+            Longitude: From 55.88531 to 55.88511 Latitude: From -4.22711 to -4.22768
+            </br>
+            Of course you can change or add vehicles any position you want.
+        </td>
+    </tr>
+
+    <table>
+
+        <tr>
+            <td  class = "td" style="width: 60px;text-align:center;vertical-align:middle;" >ID</td>
+            <td  class = "td" style="width: 60px;text-align:center;vertical-align:middle;" >Type</td>
+            <td  class = "td" style="width: 70px;text-align:center;vertical-align:middle;">Status</td>
+            <td  class = "td" style="width: 75px;text-align:center;vertical-align:middle;">Defect</td>
+            <td  class = "td" style="width: 70px;text-align:center;vertical-align:middle;">Battery</td>
+            <td  class = "td" style="width: 85px;text-align:center;vertical-align:middle;">Longitude</td>
+            <td  class = "td" style="width: 85px;text-align:center;vertical-align:middle;">Latitude</td>
+        </tr>
+    </table>
+    <div class="operatorBox">
+        {% for k,v in bikesdict.items() %}
+            <form class = "operator" id = "operate" action="/operation" method="POST" >
+                <input type="input" id="vid" name="vid" readonly="readonly" style="width:60px;" value={{ k }} >
+                <input type="input" style="width:60px;" id="vtype" name="vtype" width="1000" value={{ v[0] }}>
+                <input type="input" disabled="disabled" style="width:60px;" id="opstatus" name="opstatus" value={{v[1]}} >
+                <input type="input" style="width:60px;" id="defectstatus" name="defectstatus" value={{ v[2]}} >
+                <input type="input" style="width:60px;" id="battery" name="battery"  value={{v[3]}} >
+                <input type="input" style="width:80px" id="long" name="long" value={{v[4]}} >
+                <input type="input" style="width:80px;" id="lat" name="lat" value={{v[5]}} >
+                <input type="submit" name="chargeBattery" style="cursor: pointer" value="Charge"  />
+                <input type="submit" name="repair" style="cursor: pointer" value="Repair"/>
+                <input type="submit" name="submit" style="cursor: pointer" value="Submit"/>
+            </form>
+        {% endfor %}
+        <form class = "addvehicle" id = "add" action="/addvehicle" method="POST" >
+            <input type="input" id="vid" name="vid" disabled="disabled" style="width:60px;" value={{ k }} >
+            <input type="input" style="width:60px;" id="addvtype" name="addvtype" >
+            <input type="input" disabled="disabled" style="width:60px;" value="availabe" >
+            <input type="input" style="width:60px;" id="adddefstatus" name="adddefstatus">
+            <input type="input" style="width:60px;" id="addbattery" name="addbattery" >
+            <input type="input" style="width:60px;" id="addlong" name="addlong" >
+            <input type="input" style="width:60px;" id="addlat"  name="addlat">
+            <input type="submit" value="Add the vehicle" style="cursor: pointer"/>
+        </form>
+
+        <input type="submit" value="Back to Home page" style="cursor: pointer" onclick="backHome()"/>
+
+        <script>
+            function backHome(){
+                window.open('/','_self');
+            }
+        </script>
+
+    </div>
+</div>
+</body>
+
+</html>

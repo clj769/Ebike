@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*PAGE SECTIONS*/
+body {
+  color: #444;
+  font-family: sans-serif;
+  position: relative;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-header {
+  background-color: #f6a10e;
+  padding: 20px 40px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  height: 80px;
+}
+
+nav {
+  font-size: 18px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+article {
+  margin-bottom: 60px;
+}
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #404040;
+  border-bottom: 5px solid #404040;
+  padding: 50px 0;
+}
+/*SMALLER ELEMENTS*/
+h1,
+h2,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+}
+
+h1 {
+  color: #f7f7f7;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-style: normal;
+  text-align: center;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+h2:first-child {
+  margin-top: 20px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+/* .related {
+  list-style: none;
+  margin-left: 0;
+} */
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+footer p {
+  text-align: center;
+  font-size: 16px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #404040;
+  border-bottom: 5px solid #404040;
+  padding: 50px, 0;
+}
+body {
+  background-color: #404040;
+}
+a:link {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:visited {
+  color: #f7f7f7;
+}
+
+/* a:hover {
+  color: #f7f7f7;
+  font-weight: bold;
+  text-decoration: underline dotted orange;
+} */
+a:active {
+  font-style: italic;
+}
+
+.vehicle-img {
+  width: 500px;
+  height: auto;
+}
+nav a:link {
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+
+  /* display: block; */
+}
+nav a:link:last-child {
+  margin-right: 0;
+}
+/* button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+} */
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+  position: relative;
+}
+h2::after {
+  background-color: red;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0px;
+  right: -25px;
+}
+h1 {
+  float: left;
+}
+nav {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+article {
+  width: 1200px;
+  margin: 0 auto;
+  /* float: left; */
+}
+
+aside {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+footer {
+  clear: both;
+}
+/* CSS Grid layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300;
+}
+
+.main-header {
+  grid-column: 1 / -1;
+}
+article {
+}
+
+footer {
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-header h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 26px;
+  text-transform: capitalize;
+}
+
+.btn {
+  border: 0;
+  padding: 5px 20px;
+  background: #fff;
+  text-transform: uppercase;
+}
+.login-form {
+  padding: 50px;
+  margin: 30px;
+  width: 400px;
+  height: 286px;
+  background: #fff;
+  margin-left: 0;
+}
+
+.login-form .form-group {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form .form-group:first-child {
+  margin-top: 0;
+}
+
+.login-form .form-group .form-label {
+  text-transform: uppercase;
+  width: 100px;
+}
+.login-form .form-group .form-control {
+  flex: 1;
+  height: 35px;
+  border: 1px solid #7c7c7c;
+  outline: none;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.login-form .form-group .form-control:focus {
+  border: 1px solid #f6a10e;
+}
+.login-form .form-group .form-check {
+  margin-left: 100px;
+}
+.login-btn {
+  /* background: #8693f7; */
+  background: #f6a10e;
+  margin-left: 100px;
+  width: 100%;
+  padding: 10px 0px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.sign-btn {
+  background: #f6580e;
+  margin-left: 100px;
+  width: 100%;
+  padding: 10px 0px;
+  color: #fff;
+  font-size: 18px;
+}
+.bikes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 0;
+}
+.car_title {
+  color: #000;
+  text-align: center;
+  width: 100%;
+  display: block;
+  float: none;
+  margin: 20px;
+  font-size: 40px;
+}

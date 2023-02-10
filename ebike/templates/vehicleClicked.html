@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id='div'></div>
+
+
+<form class = "rent" id = "rent" action="/rent" method="POST" >
+    <input type="hidden" id="rentbtn" name="vid" />
+    <input type="submit" value="RENT" onclick="rent()"/>
+</form>
+
+<form class = "report" id = "report" action="/report" method="POST" >
+    <input type="hidden" name="defectvid" id = "brokenID"/>
+    Report a defect:<input type="text" name="defect" placeholder="Please enter the defect of the vehicle"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+
+<script>
+    function getvID(){
+        var vID= localStorage.vID;
+        var time = localStorage.time
+        document.getElementById('div').innerHTML ="You Are Choosing NO."+vID +" Vehicle";
+        document.getElementById('rentbtn').value = vID;
+        document.getElementById('brokenID').value = vID;
+
+
+
+    }
+
+    function rent(){
+        currentTime = getTime();
+        localStorage.time=currentTime;
+        alert(currentTime);
+        alert("Enjoy Your Ride");
+
+    }
+
+
+    function getTime(){
+        var date =  new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        hours = date.getHours();
+        minutes = date.getMinutes();
+        seconds = date.getSeconds();
+        currentTime = year+"-"+month+"-"+day+" "+hours +":"+minutes+":"+seconds
+
+        return currentTime
+    }
+
+    window.onload=getvID();
+
+
+</script>
+</body>
+<style>
+    #rent-button {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        width: 60px;
+        text-align: center;
+        border: 1px solid #232323;
+    }
+</style>
+</html>

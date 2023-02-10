@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id='div'></div>
+
+<table>
+
+        You balance is {{ balance }} now.
+
+</table>
+
+<form class = "report" id = "charge" action="/charge" method="POST" >
+    Charge your balance:<input type="text" name="money" placeholder="Please enter the money"/>
+    <input type="submit" value="Charge"/>
+</form>
+
+
+</body>
+<style>
+    #rent-button {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        width: 60px;
+        text-align: center;
+        border: 1px solid #232323;
+    }
+
+
+</style>
+</html>

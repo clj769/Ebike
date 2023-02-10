@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Map</title>
+
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+            name="description"
+            content="This tutorial shows how to create a simple store locator."
+    />
+    <meta
+            name="keywords"
+            content="Microsoft maps, map, gis, API, SDK, tutorials, store locator, locator, coffee, contoso, clustering"
+    />
+    <meta name="author" content="Microsoft Azure Maps" />
+    <meta name="screenshot" content="screenshot.jpg" />
+
+    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+    <link
+            href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css"
+            rel="stylesheet"
+    />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+    <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
+    <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
+
+    <!-- Add references to the store locator JavaScript and CSS files. -->
+    <link rel="stylesheet" href="../static/map.css" type="text/css" />
+    <script src="../static/map.js"></script>
+    <script>
+        var status;
+        {% if rentingID %}
+            status={{ rentingID }};
+        {% endif %}
+
+
+    </script>
+</head>
+<body>
+<header>
+    <span>E-E system</span>
+</header>
+<main>
+    <div class="timer">
+        <!-- <input type="text" id="timeValue" value="0秒" readonly /><br />
+        <button onclick="stopTimer()" type="button" id="add">Stop</button> -->
+    </div>
+
+    <div id="listPanel"></div>
+
+    <div id="myMap"></div>
+</main>
+<div class="info">
+    <table>
+        {% if rentingID %}
+            You are renting NO.{{ rentingID }} vehicle
+        {% endif %}
+    </table>
+    <button  id="return"  type="button" style="cursor: pointer" onclick="returnve()" >Stop renting</button>
+    <script>
+        function returnve(){
+
+            {% if rentstatus == "" %}
+                alert("Please rent a vehicle first!");
+                document.getElementById('return').action = "";
+
+            {% endif %}
+            {% if rentstatus%}
+                window.open('returnvehicle','_self');
+            {% endif %}
+
+
+        }
+
+
+
+    </script>
+    <br>
+    <table>
+        {% if balance %}
+            Your balance is {{ balance }}.
+        {% endif %}
+    </table>
+    <button  id="charge"  type="button" style="cursor: pointer" onclick="charge()" >Charge your balance</button>
+    <input type="submit" value="Back to Home page" style="cursor: pointer" onclick="backHome()"/>
+
+    <script>
+        function charge(){
+            {% if username %}
+                window.open('charge','_self')
+            {% endif %}
+            {% if username == "" %}
+                alert("Please login first!");
+            {% endif %}
+        }
+
+        function backHome(){
+            window.open('/','_self');
+        }
+
+    </script>
+
+</div>
+</body>
+</html>

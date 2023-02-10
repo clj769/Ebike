@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link href="../static/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚴‍♀️E-E System</title>
+  </head>
+
+  <body style="background-color:#404040;">
+    <div class="container">
+      <header class="main-header clearfix" style="background-color:#202020;">
+        <h1 style="margin-left: 0px;">🚴‍♀️Welcome to E-E System</h1>
+        <div class="navbar"  style=" padding-left: 80px; padding-top: -20px;">
+        <nav>
+          <a  style="background-color:#202020;" href={{url_for('login')}}>Home</a>
+          <a  style="background-color:#202020;" href={{url_for('map')}}>Map</a>
+          <a  style="background-color:#202020;" href={{url_for('dashboard')}}>Dashboard</a>
+          <a  style="background-color:#202020;" href={{url_for('contactus')}}>ContactUs</a>
+        </nav>
+      </div>
+      </header>
+      <article>
+        <header class="post-header">
+          <h2 style="color:white;">The basic shared vehicle system</h2>
+          <br>
+          <div class="login-box">
+            <form class="login-form" id="loginForm" action="login" method="POST" style="  border: 2px solid rgb(15, 15, 15); border-radius: 12px;">
+              <div class="form-group">
+                <label class="form-label" for="username">Username</label>
+                <input
+                  class="form-control"
+                  name="username"
+                  type="text"
+                  id="username"
+                />
+
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input
+                  class="form-control"
+                  name="password"
+                  type="password"
+                  id="password"
+                />
+              </div>
+              <div class="form-group">
+
+                <div class="mb-6">
+
+                  <button type="submit" style=" background-color: #008CBA;
+                  border: none;
+                  color: white;
+                  padding: 6px 15px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 20px;
+                  margin-left: 10px;" id="login">
+                      Login>
+                  </button>
+
+                  <button
+                  type="button" style="  background-color: #4CAF50;
+                  border: none;
+                  color: white;
+                  padding: 6px 15px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 20px; margin-left:10px ;">
+                <a href={{url_for('signup')}}>Sign Up</a>
+                </button>
+                    </div>  
+              </div>
+            </form>
+            <img style="  border: 2px solid rgb(15, 15, 15); border-radius: 12px;"
+              src="../static/img/vehicle.jpg"
+              alt="The picture in login page"
+              width="500"
+              height="500"
+              class="vehicle-img"
+            />
+          </div>
+        </header>
+      </article>
+      <aside>
+        <h3 class="car_title">Our Vehicles</h3>
+        <div class="bikes">
+          <div class="car"><img src="../static/img/e-bike.svg" alt="" /></div>
+          <div class="car"><img src="../static/img/e-scooter.svg" alt="" /></div>
+        </div>
+        <h2><strong>How To get started?</strong></h2>
+
+        <ol>
+          <li>Login your account.</li>
+          <li>
+            Locate many available vehicle nearby using the map function in the
+            website.
+          </li>
+          <li>Top-up into your account.</li>
+          <li>Press the "start" button to finish your journey.</li>
+          <li>
+            Press the "End" button to terminate your ride and report the status
+            of the vehicle.
+          </li>
+        </ol>
+        <p>
+          In the UK, you must be at least 18 years old and hold a provisional or
+          full driving licence to ride our scooters.
+        </p>
+
+        <h2><strong>Ride With Care</strong></h2>
+        <ul class="related">
+          <li>
+            Be sure to know local rules of the road before using a scooter.
+          </li>
+          <li>Stay off pavements.</li>
+          <li>
+            Riding on the bike lanes as possible, or close to the side curb.
+          </li>
+          <li>Be careful of intersections.</li>
+          <li>
+            Ride with two hands and leave your headphones on until you reach
+            your destination.
+          </li>
+          <li>If you want to use your phone to navigate, put it on a stand.</li>
+        </ul>
+
+        <h2><strong>Parking with care</strong></h2>
+        <ul>
+          <li>Park correctly to help keep the pavement accessible for all.</li>
+          <li>
+            Place the scooter on the pavement, close to a wall or in a
+            designated parking area.
+          </li>
+          <li>Use the kickstand to ensure the scooter and bike are upright.</li>
+          <li>
+            Ensure that you do not block any access ramps, bus stops, pedestrian
+            crossings or entrances, or obstruct public areas in any other way.
+          </li>
+          <li>Always observe local parking rules</li>
+        </ul>
+
+        <h2>Our Group Members</h2>
+        <ul>
+          <li>Cai Lujing</li>
+          <li>He Feng</li>
+          <li>Suryawanshi Parth Suresh</li>
+          <li>Qiao Gong</li>
+          <li>Xing Minghui</li>
+          <li>Mishra Debabrata</li>
+          <li>Zhang Xinyu</li>
+          <li>Zuo Hao</li>
+        </ul>
+      </aside>
+      <footer>
+        <p id="copyright">Copyright &copy; 2027 E-E_System.</p>
+      </footer>
+
+      <script src="main.js"></script>
+
+    </div>
+
+ 
+  </body>
+</html>
